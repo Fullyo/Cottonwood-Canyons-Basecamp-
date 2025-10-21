@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cottonwood Canyons Basecamp | Adventure Rental in Alta, UT</title>
+    <meta name="description" content="Your adventure hub in Little Cottonwood Canyon. A modern rental designed for skiers, mountain bikers, and mountain lovers, located minutes from Alta and Snowbird.">
+    
+    <!-- Favicon --><link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2250%22 fill=%22%23000000%22></rect><text x=%2250%%22 y=%2250%%22 dominant-baseline=%22central%22 text-anchor=%22middle%22 font-size=%2245%22 font-family=%22sans-serif%22 fill=%22%23ffffff%22>CCB</text></svg>">
+
+    <!-- Social Media Share Tags (Open Graph & Twitter) --><meta property="og:title" content="Cottonwood Canyons Basecamp | Adventure Rental in Alta, UT" />
+    <meta property="og:description" content="Your adventure hub in Little Cottonwood Canyon, perfect for skiers and mountain bikers." />
+    <meta property="og:image" content="https://res.cloudinary.com/dvdxbzv6a/image/upload/v1761010318/6cc5880e-6455-4843-9709-50858fb44690_upzuxc.avif" />
+    <!-- TODO: Replace with your actual website URL --><meta property="og:url" content="YOUR_WEBSITE_URL_HERE" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Cottonwood Canyons Basecamp | Adventure Rental in Alta, UT" />
+    <meta name="twitter:description" content="Your adventure hub in Little Cottonwood Canyon, perfect for skiers and mountain bikers." />
+    <meta name="twitter:image" content="https://res.cloudinary.com/dvdxbzv6a/image/upload/v1761010318/6cc5880e-6455-4843-9709-50858fb44690_upzuxc.avif" />
+    
+    <!-- Tailwind CSS --><script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        stone: {
+                            100: '#fcfcfc', // A very subtle, almost white gray
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts: Inter --><link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+
+    <!-- Feather Icons for simple icons --><script src="https://unpkg.com/feather-icons"></script>
+
+    <!-- Font Awesome for more specific icons (skiing, biking) --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Fancybox CSS for Lightbox --><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            overflow-x: hidden; /* Prevent horizontal scroll caused by animations */
+        }
+        .gallery-img {
+            transition: transform 0.3s ease, filter 0.3s ease;
+            filter: brightness(100%);
+        }
+        .gallery-img:hover {
+            transform: scale(1.03);
+            filter: brightness(105%);
+        }
+        .hero-bg {
+            height: 90vh; 
+            background-image: url('https://res.cloudinary.com/dvdxbzv6a/image/upload/v1761010220/12mbx7te96na1_si3qs3.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        .hero-text-shadow {
+            text-shadow: 0px 2px 4px rgba(0,0,0,0.5);
+        }
+        .footer-logo {
+            filter: brightness(0) invert(1);
+            width: 200px;
+        }
+        /* For Webkit-based browsers (Chrome, Safari) */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        /* For IE, Edge, and Firefox */
+        .no-scrollbar {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
+
+        /* Subtle Animation on Scroll */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .animate-on-scroll {
+            opacity: 0;
+        }
+        .animate-on-scroll.is-visible {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+    </style>
+    
+    <!-- SEO: JSON-LD Structured Data --><script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "VacationRental",
+      "name": "Cottonwood Canyons Basecamp",
+      "description": "A modern adventure rental in Little Cottonwood Canyon, Utah, perfect for skiing, mountain biking, and mountain getaways.",
+      "image": "https://res.cloudinary.com/dvdxbzv6a/image/upload/v1761010318/6cc5880e-6455-4843-9709-50858fb44690_upzuxc.avif",
+       "numberOfBedrooms": 4,
+       "numberOfBathroomsTotal": 4,
+       "occupancy": {
+        "@type": "QuantitativeValue",
+        "maxValue": 8
+       },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "123 Canyon Road",
+        "addressLocality": "Alta",
+        "addressRegion": "UT",
+        "postalCode": "84092",
+        "addressCountry": "US"
+      },
+      "petsAllowed": "False",
+      "smokingAllowed": "False",
+      "amenityFeature": [
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "Hot Tub"
+        },
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "Sauna"
+        },
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "Gear Room"
+        },
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "Fully-Stocked Kitchen"
+        },
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "High-Speed WiFi"
+        }
+      ]
+    }
+    </script>
+</head>
+<body class="bg-white text-stone-800">
+
+    <!-- Header --><header class="bg-white/80 backdrop-blur-lg sticky top-0 z-50 shadow-sm">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#">
+                <img src="https://res.cloudinary.com/dvdxbzv6a/image/upload/v1761015365/v1_-_Edited_ztocb1.png" alt="Cottonwood Canyons Basecamp Logo" class="h-10">
+            </a>
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#property" class="text-stone-600 hover:text-black transition duration-300">The Basecamp</a>
+                <a href="#amenities" class="text-stone-600 hover:text-black transition duration-300">Amenities</a>
+                <a href="#reviews" class="text-stone-600 hover:text-black transition duration-300">Guest Experience</a>
+                <a href="#explore" class="text-stone-600 hover:text-black transition duration-300">Explore</a>
+                <a href="#host" class="text-stone-600 hover:text-black transition duration-300">Your Host</a>
+                <a href="mailto:info@ccbasecamp.com" class="text-stone-600 hover:text-black transition duration-300">Contact</a>
+            </div>
+            <a href="#book" class="bg-black text-white font-bold py-2 px-5 rounded-lg shadow-lg hover:bg-stone-800 transition transform hover:-translate-y-0.5 duration-300">
+                Book Now
+            </a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section --><section class="hero-bg text-white flex items-center justify-center relative">
+            <!-- Gradient overlay for text readability --><div class="absolute inset-0 bg-black/40"></div>
+            
+            <div class="container mx-auto px-6 relative z-10 text-center">
+                <div class="max-w-3xl mx-auto">
+                    <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-4 hero-text-shadow animate-on-scroll is-visible">Welcome to Your Mountain Basecamp.</h1>
+                    <p class="text-lg md:text-xl text-stone-200 hero-text-shadow mb-8 animate-on-scroll is-visible [animation-delay:200ms]">Your hub for both adventure and relaxation in Little Cottonwood Canyon.</p>
+                    <a href="#book" class="bg-black text-white font-bold py-4 px-10 text-lg rounded-lg shadow-xl hover:bg-stone-800 transition transform hover:scale-105 duration-300 inline-block animate-on-scroll is-visible [animation-delay:400ms]">
+                        Check Availability & Book Now
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Property Showcase Section --><section id="property" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12 animate-on-scroll">
+                    <h2 class="text-4xl font-bold text-stone-900">Your Private Mountain Getaway</h2>
+                    <p class="text-stone-600 mt-4 max-w-3xl mx-auto text-lg">
+                        Welcome to Cottonwood Canyons Basecamp, a modern retreat designed for adventurers. With panoramic canyon views and immediate access to world-class terrain, every detail is crafted for an unforgettable mountain experience.
+                    </p>
+                </div>
+                
+                <!-- At-a-Glance Section --><div class="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-5xl mx-auto mb-16 text-center animate-on-scroll">
+                    <div class="flex items-center justify-center">
+                        <i class="fa-solid fa-users text-3xl text-black mr-3"></i>
+                        <span class="font-semibold text-lg">8 Guests</span>
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <i class="fa-solid fa-door-closed text-3xl text-black mr-3"></i>
+                        <span class="font-semibold text-lg">4 Bedrooms</span>
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <i class="fa-solid fa-bed text-3xl text-black mr-3"></i>
+                        <span class="font-semibold text-lg">5 Beds</span>
+                    </div>
+                     <div class="flex items-center justify-center">
+                        <i class="fa-solid fa-bath text-3xl text-black mr-3"></i>
+                        <span class="font-semibold text-lg">4 Baths</span>
+                    </div>
+                </div>
+
+                 <div class="text-center mb-12 animate-on-scroll">
+                     <a href="#book" class="bg-black text-white font-bold py-4 px-10 text-lg rounded-lg shadow-xl hover:bg-stone-800 transition transform hover:scale-105 duration-300 inline-block">
+                        Check Availability & Book
+                    </a>
+                 </div>
+
+                <!-- Image Gallery --><div class="grid grid-cols-1 md:grid-cols-2 gap-4 animate-on-scroll">
+                    <a href="https://res.cloudinary.com/dvdxbzv6a/image/upload/v1761010328/1437c714-fba2-4a80-aca7-7372e29a2e80_klgoug.avif" data-fancybox="gallery">
+                        <img alt="Spacious wooden deck with seating overlooking forested mountains" src="https://res.cloudinary.com/dvdxbzv6a/image/upload/v1761010328/1437c714-fba2-4a80-aca7-7372e29a2e80_klgoug.avif" class="aspect-video h-full w-full object-cover rounded-lg gallery-img"/>
+                    </a>
+                    <a href="https://res.cloudinary.com/dvdxbzv6a/image/upload/v1761010331/f5d687d3-9f06-48d7-8862-0a4c246d4bb9_zom1o0.avif" data-fancybox="gallery">
+                         <img alt="Modern living room with a large comfortable sofa and fireplace" src="https://res.cloudinary.com/dvdxbzv6a/image/upload/v1761010331/f5d687d3-9f06-48d7-8862-0a4c246d4bb9_zom1o0.avif" class="aspect-video h-full w-full object-cover rounded-lg gallery-img"/>
+                    </a>
+                    <a href="https://res.cloudinary.com/dvdxbzv6a/image/upload/v1761010323/91d0c13d-6f5f-4fc4-b196-6366d589eabc_c4zdbj.avif" data-fancybox="gallery">
+                        <img alt="Wide aerial shot showing the property in its mountain setting" src="https://res.cloudinary.com/dvdxbzv6a/image/upload/v1761010323/91d0c13d-6f5f-4fc4-b196-6366d589eabc_c4zdbj.avif" class="aspect-video h-full w-full object-cover rounded-lg gallery-img"/>
+                    </a>
+                    <a href="https://res.cloudinary.com/dvdxbzv6a/image/upload/v1761010318/6cc5880e-6455-4843-9709-50858fb44690_upzuxc.avif" data-fancybox="gallery">
+                        <img alt="Exterior view of the Cottonwood Canyons Basecamp house" src="https://res.cloudinary.com/dvdxbzv6a/image/upload/v1761010318/6cc5880e-6455-4843-9709-50858fb44690_upzuxc.avif" class="aspect-video h-full w-full object-cover rounded-lg gallery-img"/>
+                    </a>
+                    <a href="https://res.cloudinary.com/dvdxbzv6a/image/upload/v1761010315/4a08f426-3f8b-4e29-8908-113cd6028aa7_pcfvj2.avif" data-fancybox="gallery">
+                         <img alt="Dining area with a large wooden table and views of the outdoors" src="https://res.cloudinary.com/dvdxbzv6a/image/upload/v1761010315/4a08f426-3f8b-4e29-8908-113cd6028aa7_pcfvj2.avif" class="aspect-video h-full w-full object-cover rounded-lg gallery-img"/>
+                    </a>
+                    <a href="https://res.cloudinary.com/dvdxbzv6a/image/upload/v1761010319/08d4956e-34ca-43d0-8522-e42e8dc01626_givfir.avif" data-fancybox="gallery">
+                        <img alt="Game room equipped with a pool table and seating" src="https://res.cloudinary.com/dvdxbzv6a/image/upload/v1761010319/08d4956e-34ca-43d0-8522-e42e8dc01626_givfir.avif" class="aspect-video h-full w-full object-cover rounded-lg gallery-img"/>
+                    </a>
+                    <a href="https://res.cloudinary.com/dvdxbzv6a/image/upload/v1761010330/d9eb1192-b41e-445d-99aa-f0d41c763b07_jt5wqh.avif" data-fancybox="gallery">
+                         <img alt="Aerial view of the rental property nestled in the canyon" src="https://res.cloudinary.com/dvdxbzv6a/image/upload/v1761010330/d9eb1192-b41e-445d-99aa-f0d41c763b07_jt5wqh.avif" class="aspect-video h-full w-full object-cover rounded-lg gallery-img"/>
+                    </a>
+                    <a href="https://res.cloudinary.com/dvdxbzv6a/image/upload/v1761010317/5e79ca34-99d3-4175-bd62-d649de5c1885_xgpvar.avif" data-fancybox="gallery">
+                        <img alt="Modern kitchen with island and bar stools" src="https://res.cloudinary.com/dvdxbzv6a/image/upload/v1761010317/5e79ca34-99d3-4175-bd62-d649de5c1885_xgpvar.avif" class="aspect-video h-full w-full object-cover rounded-lg gallery-img"/>
+                    </a>
+                    <a href="https://res.cloudinary.com/dvdxbzv6a/image/upload/v1761010325/426e76ae-2894-40bf-8237-d89515931635_rwgrsn.avif" data-fancybox="gallery">
+                        <img alt="Cozy bedroom with a large bed and wooden accents" src="https://res.cloudinary.com/dvdxbzv6a/image/upload/v1761010325/426e76ae-2894-40bf-8237-d89515931635_rwgrsn.avif" class="aspect-video h-full w-full object-cover rounded-lg gallery-img"/>
+                    </a>
+                    <a href="https://res.cloudinary.com/dvdxbzv6a/image/upload/v1761010328/b208e9f5-b12b-43ef-8348-9ef04a2dcb6c_xbnpxk.avif" data-fancybox="gallery">
+                        <img alt="Modern bathroom with a sleek vanity and large mirror" src="https://res.cloudinary.com/dvdxbzv6a/image/upload/v1761010328/b208e9f5-b12b-43ef-8348-9ef04a2dcb6c_xbnpxk.avif" class="aspect-video h-full w-full object-cover rounded-lg gallery-img"/>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Amenities --><section id="amenities" class="py-20 bg-stone-100">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12 animate-on-scroll">
+                    <h2 class="text-4xl font-bold text-stone-900">Adventure-Ready Comforts</h2>
+                    <p class="text-stone-600 mt-4 max-w-2xl mx-auto">Premium amenities to help you recharge after a big day in the mountains.</p>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 max-w-6xl mx-auto animate-on-scroll">
+                    <div class="text-center p-6 bg-white rounded-lg shadow-sm">
+                        <i data-feather="thermometer" class="h-10 w-10 mx-auto text-black mb-3"></i>
+                        <span class="font-semibold">Outdoor Hot Tub</span>
+                    </div>
+                    <div class="text-center p-6 bg-white rounded-lg shadow-sm">
+                        <i data-feather="sunset" class="h-10 w-10 mx-auto text-black mb-3"></i>
+                        <span class="font-semibold">Private Sauna</span>
+                    </div>
+                    <div class="text-center p-6 bg-white rounded-lg shadow-sm">
+                        <i data-feather="tool" class="h-10 w-10 mx-auto text-black mb-3"></i>
+                        <span class="font-semibold">Gear & Tuning Room</span>
+                    </div>
+                    <div class="text-center p-6 bg-white rounded-lg shadow-sm">
+                        <i data-feather="wifi" class="h-10 w-10 mx-auto text-black mb-3"></i>
+                        <span class="font-semibold">High-Speed WiFi</span>
+                    </div>
+                    <div class="text-center p-6 bg-white rounded-lg shadow-sm">
+                        <i data-feather="coffee" class="h-10 w-10 mx-auto text-black mb-3"></i>
+                        <span class="font-semibold">Fully-Stocked Kitchen</span>
+                    </div>
+                </div>
+                <div class="text-center mt-12 animate-on-scroll">
+                    <a href="#amenities" class="bg-transparent border-2 border-black text-black font-bold py-3 px-8 rounded-lg shadow-md hover:bg-black hover:text-white transition transform hover:scale-105 duration-300 inline-block">
+                        View All Amenities
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Guest Reviews Section --><section id="reviews" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12 animate-on-scroll">
+                    <h2 class="text-4xl font-bold text-stone-900">What Our Guests Are Saying</h2>
+                    <p class="text-stone-600 mt-4 max-w-2xl mx-auto">We're dedicated to providing a 5-star experience for every guest.</p>
+                </div>
+                <div class="flex overflow-x-auto space-x-8 pb-8 no-scrollbar snap-x snap-mandatory">
+                    <!-- Review Card 1 --><div class="flex-shrink-0 w-full sm:w-1/2 lg:w-1/3 snap-center animate-on-scroll">
+                        <div class="bg-stone-100 p-8 rounded-lg shadow-lg h-full flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center mb-4">
+                                    <div class="text-amber-500 flex space-x-1">
+                                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                                <p class="text-stone-600 mb-4">"Beautiful and well decorated place, very conveniently located a short drive from little cottonwood canyon. It had everything we needed and lots of bonus amenities - the hot tub, sauna,..."</p>
+                            </div>
+                            <p class="font-bold text-stone-800 mt-4">- Amaya</p>
+                        </div>
+                    </div>
+                    <!-- Review Card 2 --><div class="flex-shrink-0 w-full sm:w-1/2 lg:w-1/3 snap-center animate-on-scroll" style="animation-delay: 150ms;">
+                        <div class="bg-stone-100 p-8 rounded-lg shadow-lg h-full flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center mb-4">
+                                    <div class="text-amber-500 flex space-x-1">
+                                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                                <p class="text-stone-600 mb-4">"Perfect spot for our ski trip and daily rides up to Big Cottonwood. The hot tub and sauna were great after long days and the house came with everything we needed. Woul..."</p>
+                            </div>
+                            <p class="font-bold text-stone-800 mt-4">- Seth</p>
+                        </div>
+                    </div>
+                    <!-- Review Card 3 --><div class="flex-shrink-0 w-full sm:w-1/2 lg:w-1/3 snap-center animate-on-scroll" style="animation-delay: 300ms;">
+                        <div class="bg-stone-100 p-8 rounded-lg shadow-lg h-full flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center mb-4">
+                                    <div class="text-amber-500 flex space-x-1">
+                                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                                <p class="text-stone-600 mb-4">"Our family of four loved our stay at this house! It has everything you could need, plus a great layout and a sauna and hot tub. The house is well-appointed with upscale..."</p>
+                            </div>
+                            <p class="font-bold text-stone-800 mt-4">- Pam</p>
+                        </div>
+                    </div>
+                    <!-- Review Card 4 --><div class="flex-shrink-0 w-full sm:w-1/2 lg:w-1/3 snap-center animate-on-scroll" style="animation-delay: 450ms;">
+                        <div class="bg-stone-100 p-8 rounded-lg shadow-lg h-full flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center mb-4">
+                                    <div class="text-amber-500 flex space-x-1">
+                                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                                <p class="text-stone-600 mb-4">"Great place and communication, check in etc was very smooth. The house is very clean, comfortable, and nicely appointed with a great location near the ski mountains."</p>
+                            </div>
+                            <p class="font-bold text-stone-800 mt-4">- Adam</p>
+                        </div>
+                    </div>
+                     <!-- Review Card 5 --><div class="flex-shrink-0 w-full sm:w-1/2 lg:w-1/3 snap-center animate-on-scroll" style="animation-delay: 600ms;">
+                        <div class="bg-stone-100 p-8 rounded-lg shadow-lg h-full flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center mb-4">
+                                    <div class="text-amber-500 flex space-x-1">
+                                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                                <p class="text-stone-600 mb-4">"From start to finish was exactly as advertised will definitely be staying here again"</p>
+                            </div>
+                            <p class="font-bold text-stone-800 mt-4">- Brian</p>
+                        </div>
+                    </div>
+                     <!-- Review Card 6 --><div class="flex-shrink-0 w-full sm:w-1/2 lg:w-1/3 snap-center animate-on-scroll" style="animation-delay: 750ms;">
+                        <div class="bg-stone-100 p-8 rounded-lg shadow-lg h-full flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center mb-4">
+                                    <div class="text-amber-500 flex space-x-1">
+                                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                                <p class="text-stone-600 mb-4">"Peter is a great host and we absolutely loved our stay in this wonderful East Shandy spot. The house was beautiful, well-appointed, and the beds were super comfortable! Thanks..."</p>
+                            </div>
+                            <p class="font-bold text-stone-800 mt-4">- Richard</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Things to Do Section --><section id="explore" class="py-20 bg-stone-100">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12 animate-on-scroll">
+                    <h2 class="text-4xl font-bold text-stone-900">Explore Little Cottonwood Canyon</h2>
+                    <p class="text-stone-600 mt-4 max-w-2xl mx-auto">World-famous skiing, epic mountain biking, and stunning hikes are right outside your door.</p>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Attraction 1: Skiing --><div class="rounded-lg shadow-lg overflow-hidden group animate-on-scroll">
+                        <img src="https://res.cloudinary.com/dvdxbzv6a/image/upload/v1761010221/Little-cottonwood-canyon_jcjrp8.jpg" alt="Skier making a turn in deep powder snow in Little Cottonwood Canyon" class="w-full h-48 object-cover">
+                        <div class="p-6 bg-white">
+                             <div class="flex items-center mb-3">
+                                <i class="fa-solid fa-person-skiing text-black h-6 w-6 mr-3"></i>
+                                <h3 class="text-xl font-bold">Legendary Skiing</h3>
+                            </div>
+                            <p class="text-stone-600">Ski or ride "The Greatest Snow on Earth®" at Alta and Snowbird, both just minutes away from the basecamp.</p>
+                        </div>
+                    </div>
+                    <!-- Attraction 2: Biking --><div class="rounded-lg shadow-lg overflow-hidden group animate-on-scroll" style="animation-delay: 150ms;">
+                        <img src="https://res.cloudinary.com/dvdxbzv6a/image/upload/v1761012614/a928348e-f381-5eff-8574-66c9a68c084e_woaqdg.jpg" alt="Mountain biker riding on a dirt trail with mountains in the background" class="w-full h-48 object-cover">
+                        <div class="p-6 bg-white">
+                            <div class="flex items-center mb-3">
+                                <i class="fa-solid fa-bicycle text-black h-6 w-6 mr-3"></i>
+                                <h3 class="text-xl font-bold">Mountain Biking</h3>
+                            </div>
+                            <p class="text-stone-600">In the summer, the canyon transforms into a biker's paradise with miles of singletrack and lift-accessed trails.</p>
+                        </div>
+                    </div>
+                    <!-- Attraction 3: Hiking --><div class="rounded-lg shadow-lg overflow-hidden group animate-on-scroll" style="animation-delay: 300ms;">
+                        <img src="https://res.cloudinary.com/dvdxbzv6a/image/upload/v1761010222/little_cottonwood_canyon_xb3ngw.webp" alt="Hiker on a trail overlooking a valley with vibrant wildflowers" class="w-full h-48 object-cover">
+                        <div class="p-6 bg-white">
+                            <div class="flex items-center mb-3">
+                                <i class="fa-solid fa-person-hiking text-black h-6 w-6 mr-3"></i>
+                                <h3 class="text-xl font-bold">Alpine Hiking</h3>
+                            </div>
+                            <p class="text-stone-600">Explore stunning trails to alpine lakes like Cecret Lake, surrounded by wildflower-filled meadows in the summer.</p>
+                        </div>
+                    </div>
+                    <!-- Attraction 4: Salt Lake City --><div class="rounded-lg shadow-lg overflow-hidden group animate-on-scroll" style="animation-delay: 450ms;">
+                        <img src="https://res.cloudinary.com/dvdxbzv6a/image/upload/v1761012613/Salt-Lake-City-in-one-day-itinerary_c5zedq.webp" alt="Skyline of Salt Lake City with mountains in the background during sunset" class="w-full h-48 object-cover">
+                        <div class="p-6 bg-white">
+                             <div class="flex items-center mb-3">
+                                <i class="fa-solid fa-city text-black h-6 w-6 mr-3"></i>
+                                <h3 class="text-xl font-bold">Proximity to SLC</h3>
+                            </div>
+                            <p class="text-stone-600">Enjoy the best of both worlds with Salt Lake City's vibrant dining and culture just a 30-minute drive away.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Meet The Host --><section id="host" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="flex flex-col md:flex-row items-center gap-12">
+                    <div class="md:w-1/3 animate-on-scroll">
+                        <img src="https://placehold.co/400x400/f5f5f4/1c1917?text=Your+Host" alt="Photo of your host" class="rounded-full shadow-xl mx-auto">
+                    </div>
+                    <div class="md:w-2/3 text-center md:text-left animate-on-scroll" style="animation-delay: 150ms;">
+                        <h2 class="text-4xl font-bold text-stone-900">A Warm Welcome from Your Host</h2>
+                        <p class="text-stone-700 mt-4 text-lg">"As lifelong skiers and bikers, we built this basecamp to be the perfect launchpad for mountain adventures. We've poured our love for the Wasatch into every detail. Our goal is to provide a seamless, 5-star experience so you can focus on making memories in these incredible mountains. We can't wait to host you!"</p>
+                        <p class="mt-4 font-bold text-stone-800">- The Owners</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final CTA --><section id="book" class="py-20 bg-stone-100">
+            <div class="container mx-auto px-6 text-center text-stone-800">
+                <div class="animate-on-scroll">
+                    <h2 class="text-4xl font-bold text-stone-900">Your Utah Escape Awaits</h2>
+                    <p class="mt-4 text-lg max-w-2xl mx-auto text-stone-600">Ready to drop into your next adventure? Book direct for the best experience.</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto my-12 animate-on-scroll">
+                    <div>
+                        <i data-feather="check-circle" class="h-10 w-10 mx-auto mb-3 text-black"></i>
+                        <h3 class="font-bold text-xl">Best Rate Guaranteed</h3>
+                        <p class="text-stone-600">Avoid third-party fees</p>
+                    </div>
+                     <div>
+                        <i data-feather="message-square" class="h-10 w-10 mx-auto mb-3 text-black"></i>
+                        <h3 class="font-bold text-xl">Direct Communication</h3>
+                        <p class="text-stone-600">Personalized service</p>
+                    </div>
+                     <div>
+                        <i data-feather="gift" class="h-10 w-10 mx-auto mb-3 text-black"></i>
+                        <h3 class="font-bold text-xl">Exclusive Perks</h3>
+                        <p class="text-stone-600">Local tips & recommendations</p>
+                    </div>
+                </div>
+
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4 animate-on-scroll">
+                    <a href="#" class="bg-black text-white font-bold py-4 px-10 text-lg rounded-lg shadow-xl hover:bg-stone-800 transition transform hover:scale-105 duration-300 inline-block w-full sm:w-auto">
+                        Secure Your Dates
+                    </a>
+                    <a href="mailto:info@ccbasecamp.com" class="bg-transparent border-2 border-black text-black font-bold py-4 px-10 text-lg rounded-lg shadow-xl hover:bg-black hover:text-white transition transform hover:scale-105 duration-300 inline-block w-full sm:w-auto">
+                        Get In Touch
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer --><footer class="bg-black text-stone-300 pt-16 pb-8">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
+                <!-- About Column --><div class="mb-6 md:mb-0">
+                    <div class="flex items-center justify-center md:justify-start mb-4">
+                       <img src="https://res.cloudinary.com/dvdxbzv6a/image/upload/v1761015365/v1_-_Edited_ztocb1.png" alt="Cottonwood Canyons Basecamp Logo" class="footer-logo">
+                    </div>
+                     <p class="text-sm text-stone-400 max-w-xs mx-auto md:mx-0">Your hub for adventure and relaxation in the heart of Little Cottonwood Canyon. Unwind, explore, and create lasting memories.</p>
+                </div>
+
+                <!-- Quick Links Column --><div class="mb-6 md:mb-0">
+                    <h4 class="text-lg font-semibold text-white mb-3">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#property" class="hover:text-white transition-colors">The Basecamp</a></li>
+                        <li><a href="#amenities" class="hover:text-white transition-colors">Amenities</a></li>
+                        <li><a href="#reviews" class="hover:text-white transition-colors">Guest Experience</a></li>
+                        <li><a href="#explore" class="hover:text-white transition-colors">Explore</a></li>
+                        <li><a href="#host" class="hover:text-white transition-colors">Your Host</a></li>
+                        <li><a href="mailto:info@ccbasecamp.com" class="hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Connect Column --><div>
+                    <h4 class="text-lg font-semibold text-white mb-3">Location</h4>
+                    <p class="mb-4">Little Cottonwood Canyon<br>Alta, Utah</p>
+                </div>
+            </div>
+            <div class="mt-12 border-t border-stone-700 pt-6 text-center text-sm text-stone-500">
+                <p>&copy; 2025 Cottonwood Canyons Basecamp. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Fancybox JS for Lightbox --><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+
+    <script>
+        // Script to activate Feather icons
+        feather.replace();
+
+        // Initialize Fancybox
+        Fancybox.bind('[data-fancybox="gallery"]', {
+            // Your custom options here
+        });
+        
+        // Animation on Scroll Logic
+        document.addEventListener("DOMContentLoaded", () => {
+            const animatedElements = document.querySelectorAll('.animate-on-scroll');
+
+            // Fallback for browsers that don't support IntersectionObserver
+            if (!('IntersectionObserver' in window)) {
+                animatedElements.forEach(el => el.classList.add('is-visible'));
+                return;
+            }
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    // When the element is in view, add the 'is-visible' class
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        // Stop observing the element once it's visible
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.1 // Trigger when 10% of the element is visible
+            });
+
+            animatedElements.forEach(el => {
+                observer.observe(el);
+            });
+        });
+    </script>
+</body>
+</html>
+
