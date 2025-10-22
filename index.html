@@ -281,7 +281,7 @@
                         <img alt="Wide aerial shot showing the property in its mountain setting" src="https://res.cloudinary.com/dvdxbzv6a/image/upload/v1761010323/91d0c13d-6f5f-4fc4-b196-6366d589eabc_c4zdbj.avif" class="aspect-video h-full w-full object-cover rounded-lg gallery-img"/>
                     </a>
                     <a href="https://res.cloudinary.com/dvdxbzv6a/image/upload/v1761010318/6cc5880e-6455-4843-9709-50858fb44690_upzuxc.avif" data-fancybox="gallery">
-                        <img alt="Exterior view of the Cottonwood Canyons Basecamp house" src="https://res.cloudinary.com/dvdxbzv6a/image/upload/v1761010318/6cc5880e-6455-4843-9709-50858fb44690_upzuxc.avif" class="aspect-video h-full w-full object-cover rounded-lg gallery-img"/>
+                        <img alt="Exterior view of the Cottonwood Canyons Basecamp house" src="httpsa://res.cloudinary.com/dvdxbzv6a/image/upload/v1761010318/6cc5880e-6455-4843-9709-50858fb44690_upzuxc.avif" class="aspect-video h-full w-full object-cover rounded-lg gallery-img"/>
                     </a>
                     <a href="https://res.cloudinary.com/dvdxbzv6a/image/upload/v1761010315/4a08f426-3f8b-4e29-8908-113cd6028aa7_pcfvj2.avif" data-fancybox="gallery">
                          <img alt="Dining area with a large wooden table and views of the outdoors" src="https://res.cloudinary.com/dvdxbzv6a/image/upload/v1761010315/4a08f426-3f8b-4e29-8908-113cd6028aa7_pcfvj2.avif" class="aspect-video h-full w-full object-cover rounded-lg gallery-img"/>
@@ -292,7 +292,7 @@
                     <a href="https://res.cloudinary.com/dvdxbzv6a/image/upload/v1761010330/d9eb1192-b41e-445d-99aa-f0d41c763b07_jt5wqh.avif" data-fancybox="gallery">
                          <img alt="Aerial view of the rental property nestled in the canyon" src="https://res.cloudinary.com/dvdxbzv6a/image/upload/v1761010330/d9eb1192-b41e-445d-99aa-f0d41c763b07_jt5wqh.avif" class="aspect-video h-full w-full object-cover rounded-lg gallery-img"/>
                     </a>
-                    <a href="httpsZ: //res.cloudinary.com/dvdxbzv6a/image/upload/v1761010317/5e79ca34-99d3-4175-bd62-d649de5c1885_xgpvar.avif" data-fancybox="gallery">
+                    <a href="https://res.cloudinary.com/dvdxbzv6a/image/upload/v1761010317/5e79ca34-99d3-4175-bd62-d649de5c1885_xgpvar.avif" data-fancybox="gallery">
                         <img alt="Modern kitchen with island and bar stools" src="https://res.cloudinary.com/dvdxbzv6a/image/upload/v1761010317/5e79ca34-99d3-4175-bd62-d649de5c1885_xgpvar.avif" class="aspect-video h-full w-full object-cover rounded-lg gallery-img"/>
                     </a>
                     <a href="https://res.cloudinary.com/dvdxbzv6a/image/upload/v1761010325/426e76ae-2894-40bf-8237-d89515931635_rwgrsn.avif" data-fancybox="gallery">
@@ -496,34 +496,12 @@
                             </li>
                         </ul>
                     </div>
-                    <!-- Weather Widget Placeholder -->
-                    <div class="bg-stone-100 rounded-lg p-6 shadow-lg animate-on-scroll" style="animation-delay: 150ms;">
-                        <div class="flex justify-between items-center mb-2">
-                            <h4 class="font-bold text-lg text-stone-900">Alta, UT Weather</h4>
-                            <i data-feather="sun" class="h-8 w-8 text-amber-500"></i> <!-- Example icon with color -->
-                        </div>
-                        <div class="text-5xl font-bold text-stone-900 mb-4">
-                            32&deg; <span class="text-2xl font-medium text-stone-600">F</span>
-                        </div>
-                        <p class="text-stone-600 mb-4">Clear Skies</p>
-                        <div class="flex justify-between text-sm text-stone-600 border-t border-stone-300 pt-4">
-                            <div class="text-center">
-                                <p class="font-bold">FRI</p>
-                                <i data-feather="sun" class="h-6 w-6 mx-auto my-1 text-amber-500"></i>
-                                <p>34&deg;</p>
-                            </div>
-                            <div class="text-center">
-                                <p class="font-bold">SAT</p>
-                                <i data-feather="cloud-snow" class="h-6 w-6 mx-auto my-1 text-amber-500"></i>
-                                <p>30&deg;</p>
-                            </div>
-                            <div class="text-center">
-                                <p class="font-bold">SUN</p>
-                                <i data-feather="cloud" class="h-6 w-6 mx-auto my-1 text-amber-500"></i>
-                                <p>28&deg;</p>
-                            </div>
-                        </div>
-                        <a href="httpsIndicate placeholder for a live weather widget. The code you provided can be easily dropped in here when the site is live." target="_blank" rel="noopener noreferrer" class="text-xs text-stone-400 mt-4 text-center block hover:underline">Live weather widget placeholder &rarr;</a>
+                    <!-- Live Weather Widget -->
+                    <div class="animate-on-scroll" style="animation-delay: 150ms;">
+                        <a class="weatherwidget-io" href="https://forecast7.com/en/40d56n111d84/sandy/" data-label_1="SANDY" data-label_2="WEATHER" data-theme="original" >SANDY WEATHER</a>
+                        <script>
+                        !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
+                        </script>
                     </div>
                 </div>
             </div>
