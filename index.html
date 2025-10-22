@@ -148,7 +148,7 @@
       "description": "A modern adventure rental in Little Cottonwood Canyon, Utah, perfect for skiing, mountain biking, and mountain getaways.",
       "image": "https://res.cloudinary.com/dvdxbzv6a/image/upload/v1761010318/6cc5880e-6455-4843-9709-50858fb44690_upzuxc.avif",
        "numberOfBedrooms": 4,
-       "numberOfBathroomsTotal": 4,
+       "numberOfBathroomsTotal": 3,
        "occupancy": {
         "@type": "QuantitativeValue",
         "maxValue": 8
@@ -176,7 +176,7 @@
           "@type": "LocationFeatureSpecification",
           "name": "Yoga & Fitness Space"
         },
-        { /* Removed Free Garage Parking from JSON-LD as well */
+        { 
           "@type": "LocationFeatureSpecification",
           "name": "High-Speed WiFi"
         }
@@ -260,7 +260,7 @@
                     </div>
                      <div class="flex items-center justify-center">
                         <i class="fa-solid fa-bath text-3xl text-black mr-3"></i>
-                        <span class="font-semibold text-lg">4 Baths</span>
+                        <span class="font-semibold text-lg">3 Baths</span>
                     </div>
                 </div>
 
@@ -292,7 +292,7 @@
                     <a href="https://res.cloudinary.com/dvdxbzv6a/image/upload/v1761010330/d9eb1192-b41e-445d-99aa-f0d41c763b07_jt5wqh.avif" data-fancybox="gallery">
                          <img alt="Aerial view of the rental property nestled in the canyon" src="https://res.cloudinary.com/dvdxbzv6a/image/upload/v1761010330/d9eb1192-b41e-445d-99aa-f0d41c763b07_jt5wqh.avif" class="aspect-video h-full w-full object-cover rounded-lg gallery-img"/>
                     </a>
-                    <a href="https://res.cloudinary.com/dvdxbzv6a/image/upload/v1761010317/5e79ca34-99d3-4175-bd62-d649de5c1885_xgpvar.avif" data-fancybox="gallery">
+                    <a href="httpsZ: //res.cloudinary.com/dvdxbzv6a/image/upload/v1761010317/5e79ca34-99d3-4175-bd62-d649de5c1885_xgpvar.avif" data-fancybox="gallery">
                         <img alt="Modern kitchen with island and bar stools" src="https://res.cloudinary.com/dvdxbzv6a/image/upload/v1761010317/5e79ca34-99d3-4175-bd62-d649de5c1885_xgpvar.avif" class="aspect-video h-full w-full object-cover rounded-lg gallery-img"/>
                     </a>
                     <a href="https://res.cloudinary.com/dvdxbzv6a/image/upload/v1761010325/426e76ae-2894-40bf-8237-d89515931635_rwgrsn.avif" data-fancybox="gallery">
@@ -460,27 +460,70 @@
             </div>
         </section>
 
-        <!-- NEW Location Highlights Section --><section id="location" class="py-20 bg-white">
+        <!-- UPDATED Location Highlights Section --><section id="location" class="py-20 bg-white">
             <div class="container mx-auto px-6">
                  <div class="text-center mb-12 animate-on-scroll">
-                    <h2 class="text-4xl font-bold text-stone-900">Unbeatable Location</h2>
-                    <p class="text-stone-600 mt-4 max-w-2xl mx-auto">Nestled in the heart of the Wasatch, you're just minutes away from world-class adventure and easy airport access.</p>
+                    <h2 class="text-4xl font-bold text-stone-900">Your Hub for the Wasatch</h2>
+                    <p class="text-stone-600 mt-4 max-w-2xl mx-auto">Minutes from world-class resorts and the airport, your adventure starts here.</p>
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto text-center animate-on-scroll">
-                     <div>
-                        <i data-feather="map-pin" class="h-10 w-10 mx-auto mb-3 text-black"></i>
-                        <h3 class="font-bold text-xl">5 Minutes</h3>
-                        <p class="text-stone-600">to Alta Ski Area</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center max-w-5xl mx-auto">
+                    <!-- Location List -->
+                    <div class="animate-on-scroll">
+                        <ul class="space-y-4">
+                            <li class="flex items-center text-lg">
+                                <i data-feather="map-pin" class="h-6 w-6 mr-3 text-black flex-shrink-0"></i>
+                                <span><strong class="font-bold">10 Minutes</strong> to Snowbird</span>
+                            </li>
+                            <li class="flex items-center text-lg">
+                                <i data-feather="map-pin" class="h-6 w-6 mr-3 text-black flex-shrink-0"></i>
+                                <span><strong class="font-bold">15 Minutes</strong> to Alta Ski Area</span>
+                            </li>
+                            <li class="flex items-center text-lg">
+                                <i data-feather="map-pin" class="h-6 w-6 mr-3 text-black flex-shrink-0"></i>
+                                <span><strong class="font-bold">25 Minutes</strong> to Solitude</span>
+                            </li>
+                            <li class="flex items-center text-lg">
+                                <i data-feather="map-pin" class="h-6 w-6 mr-3 text-black flex-shrink-0"></i>
+                                <span><strong class="font-bold">40 Minutes</strong> to Park City</span>
+                            </li>
+                             <li class="flex items-center text-lg">
+                                <i data-feather="map-pin" class="h-6 w-6 mr-3 text-black flex-shrink-0"></i>
+                                <span><strong class="font-bold">60 Minutes</strong> to Snowbasin</span>
+                            </li>
+                            <li class="flex items-center text-lg">
+                                <i data-feather="navigation" class="h-6 w-6 mr-3 text-black flex-shrink-0"></i>
+                                <span><strong class="font-bold">30 Minutes</strong> to SLC International Airport</span>
+                            </li>
+                        </ul>
                     </div>
-                     <div>
-                        <i data-feather="map-pin" class="h-10 w-10 mx-auto mb-3 text-black"></i>
-                        <h3 class="font-bold text-xl">10 Minutes</h3>
-                        <p class="text-stone-600">to Snowbird</p>
-                    </div>
-                     <div>
-                        <i data-feather="navigation" class="h-10 w-10 mx-auto mb-3 text-black"></i>
-                        <h3 class="font-bold text-xl">30 Minutes</h3>
-                        <p class="text-stone-600">to SLC International Airport</p>
+                    <!-- Weather Widget Placeholder -->
+                    <div class="bg-stone-100 rounded-lg p-6 shadow-lg animate-on-scroll" style="animation-delay: 150ms;">
+                        <div class="flex justify-between items-center mb-2">
+                            <h4 class="font-bold text-lg text-stone-900">Alta, UT Weather</h4>
+                            <i data-feather="sun" class="h-8 w-8 text-amber-500"></i> <!-- Example icon with color -->
+                        </div>
+                        <div class="text-5xl font-bold text-stone-900 mb-4">
+                            32&deg; <span class="text-2xl font-medium text-stone-600">F</span>
+                        </div>
+                        <p class="text-stone-600 mb-4">Clear Skies</p>
+                        <div class="flex justify-between text-sm text-stone-600 border-t border-stone-300 pt-4">
+                            <div class="text-center">
+                                <p class="font-bold">FRI</p>
+                                <i data-feather="sun" class="h-6 w-6 mx-auto my-1 text-amber-500"></i>
+                                <p>34&deg;</p>
+                            </div>
+                            <div class="text-center">
+                                <p class="font-bold">SAT</p>
+                                <i data-feather="cloud-snow" class="h-6 w-6 mx-auto my-1 text-amber-500"></i>
+                                <p>30&deg;</p>
+                            </div>
+                            <div class="text-center">
+                                <p class="font-bold">SUN</p>
+                                <i data-feather="cloud" class="h-6 w-6 mx-auto my-1 text-amber-500"></i>
+                                <p>28&deg;</p>
+                            </div>
+                        </div>
+                        <a href="httpsIndicate placeholder for a live weather widget. The code you provided can be easily dropped in here when the site is live." target="_blank" rel="noopener noreferrer" class="text-xs text-stone-400 mt-4 text-center block hover:underline">Live weather widget placeholder &rarr;</a>
                     </div>
                 </div>
             </div>
@@ -558,8 +601,8 @@
                 <h2 class="text-3xl font-bold text-stone-900">Have a Question?</h2>
                 <p class="text-stone-600 mt-2">We'll get back to you as soon as possible.</p>
             </div>
-            <form action="#" method="POST">
-                <!-- This is a front-end only form. It will not send emails without a backend service. -->
+            <form name="contact" method="POST" data-netlify="true">
+                <input type="hidden" name="form-name" value="contact" />
                 <div class="mb-4">
                     <label for="modal-name" class="block text-stone-700 font-bold mb-2">Name</label>
                     <input type="text" id="modal-name" name="name" class="w-full px-4 py-2 border border-stone-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black" required>
