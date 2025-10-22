@@ -52,19 +52,47 @@
             overflow-x: hidden; /* Prevent horizontal scroll caused by animations */
         }
         .gallery-img {
-            transition: transform 0.3s ease, filter 0.3s ease;
+            transition: transform 0.4s ease, filter 0.4s ease; /* Slightly longer transition */
             filter: brightness(100%);
         }
         .gallery-img:hover {
-            transform: scale(1.03);
-            filter: brightness(105%);
+            transform: scale(1.05); /* Slightly more zoom */
+            filter: brightness(110%); /* More noticeable brightness */
         }
-        .hero-bg {
+        
+        /* Hero Slider Styles */
+        #hero-section {
             height: 90vh; 
-            background-image: url('https://res.cloudinary.com/dvdxbzv6a/image/upload/v1761010220/12mbx7te96na1_si3qs3.jpg');
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             background-size: cover;
             background-position: center;
+            opacity: 0;
+            transition: opacity 1.5s ease-in-out; /* Smooth cross-fade */
+            z-index: 1;
         }
+        .hero-slide.active {
+            opacity: 1;
+            z-index: 2;
+        }
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background-color: rgba(0, 0, 0, 0.4); /* Dark overlay */
+            z-index: 3; /* Above slides */
+        }
+        .hero-content {
+            position: relative;
+            z-index: 4; /* Above overlay */
+        }
+
         .hero-text-shadow {
             text-shadow: 0px 2px 4px rgba(0,0,0,0.5);
         }
@@ -135,11 +163,11 @@
         },
         {
           "@type": "LocationFeatureSpecification",
-          "name": "Gear Room"
+          "name": "Yoga & Fitness Space"
         },
         {
           "@type": "LocationFeatureSpecification",
-          "name": "Fully-Stocked Kitchen"
+          "name": "Free Garage Parking"
         },
         {
           "@type": "LocationFeatureSpecification",
@@ -161,24 +189,33 @@
                 <a href="#amenities" class="text-stone-600 hover:text-black transition duration-300">Amenities</a>
                 <a href="#reviews" class="text-stone-600 hover:text-black transition duration-300">Guest Experience</a>
                 <a href="#explore" class="text-stone-600 hover:text-black transition duration-300">Explore</a>
-                <a href="#host" class="text-stone-600 hover:text-black transition duration-300">Your Host</a>
-                <a href="mailto:info@ccbasecamp.com" class="text-stone-600 hover:text-black transition duration-300">Contact</a>
+                <a href="#location" class="text-stone-600 hover:text-black transition duration-300">Location</a>
+                <a href="#host" class="text-stone-600 hover:text-black transition duration-300">Your Hosts</a>
+                <a href="#" class="open-contact-modal text-stone-600 hover:text-black transition duration-300">Contact</a>
             </div>
-            <a href="#book" class="bg-black text-white font-bold py-2 px-5 rounded-lg shadow-lg hover:bg-stone-800 transition transform hover:-translate-y-0.5 duration-300">
+            <a href="https://cottonwoodcanyonsbasecamp.guestybookings.com/en/properties/68f28768353659001089f33f?minOccupancy=1" target="_blank" class="bg-black text-white font-bold py-2 px-5 rounded-lg shadow-lg hover:bg-stone-800 transition transform hover:-translate-y-0.5 duration-300">
                 Book Now
             </a>
         </nav>
     </header>
 
     <main>
-        <!-- Hero Section --><section class="hero-bg text-white flex items-center justify-center relative">
-            <!-- Gradient overlay for text readability --><div class="absolute inset-0 bg-black/40"></div>
+        <!-- Hero Section with Slider -->
+        <section id="hero-section" class="text-white flex items-center justify-center">
+            <!-- Slides -->
+            <div class="hero-slide active" style="background-image: url('https://res.cloudinary.com/dvdxbzv6a/image/upload/v1761020551/hero_t6zoec.jpg')"></div>
+            <div class="hero-slide" style="background-image: url('https://res.cloudinary.com/dvdxbzv6a/image/upload/v1761010221/Little-cottonwood-canyon_jcjrp8.jpg')"></div>
+            <div class="hero-slide" style="background-image: url('https://res.cloudinary.com/dvdxbzv6a/image/upload/v1761010222/little_cottonwood_canyon_xb3ngw.webp')"></div>
             
-            <div class="container mx-auto px-6 relative z-10 text-center">
+            <!-- Dark Overlay -->
+            <div class="hero-overlay"></div>
+            
+            <!-- Content -->
+            <div class="hero-content container mx-auto px-6 text-center">
                 <div class="max-w-3xl mx-auto">
                     <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-4 hero-text-shadow animate-on-scroll is-visible">Welcome to Your Mountain Basecamp.</h1>
-                    <p class="text-lg md:text-xl text-stone-200 hero-text-shadow mb-8 animate-on-scroll is-visible [animation-delay:200ms]">Your hub for both adventure and relaxation in Little Cottonwood Canyon.</p>
-                    <a href="#book" class="bg-black text-white font-bold py-4 px-10 text-lg rounded-lg shadow-xl hover:bg-stone-800 transition transform hover:scale-105 duration-300 inline-block animate-on-scroll is-visible [animation-delay:400ms]">
+                    <p class="text-lg md:text-xl text-stone-200 hero-text-shadow mb-8 animate-on-scroll is-visible [animation-delay:200ms]">Your hub for year-round adventure and relaxation in Little Cottonwood Canyon.</p>
+                    <a href="https://cottonwoodcanyonsbasecamp.guestybookings.com/en/properties/68f28768353659001089f33f?minOccupancy=1" target="_blank" class="bg-black text-white font-bold py-4 px-10 text-lg rounded-lg shadow-xl hover:bg-stone-800 transition transform hover:scale-105 duration-300 inline-block animate-on-scroll is-visible [animation-delay:400ms]">
                         Check Availability & Book Now
                     </a>
                 </div>
@@ -214,7 +251,7 @@
                 </div>
 
                  <div class="text-center mb-12 animate-on-scroll">
-                     <a href="#book" class="bg-black text-white font-bold py-4 px-10 text-lg rounded-lg shadow-xl hover:bg-stone-800 transition transform hover:scale-105 duration-300 inline-block">
+                     <a href="https://cottonwoodcanyonsbasecamp.guestybookings.com/en/properties/68f28768353659001089f33f?minOccupancy=1" target="_blank" class="bg-black text-white font-bold py-4 px-10 text-lg rounded-lg shadow-xl hover:bg-stone-800 transition transform hover:scale-105 duration-300 inline-block">
                         Check Availability & Book
                     </a>
                  </div>
@@ -262,28 +299,28 @@
                 </div>
                 <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 max-w-6xl mx-auto animate-on-scroll">
                     <div class="text-center p-6 bg-white rounded-lg shadow-sm">
-                        <i data-feather="thermometer" class="h-10 w-10 mx-auto text-black mb-3"></i>
+                        <i data-feather="droplet" class="h-10 w-10 mx-auto text-black mb-3"></i>
                         <span class="font-semibold">Outdoor Hot Tub</span>
                     </div>
                     <div class="text-center p-6 bg-white rounded-lg shadow-sm">
-                        <i data-feather="sunset" class="h-10 w-10 mx-auto text-black mb-3"></i>
+                        <i data-feather="thermometer" class="h-10 w-10 mx-auto text-black mb-3"></i>
                         <span class="font-semibold">Private Sauna</span>
                     </div>
                     <div class="text-center p-6 bg-white rounded-lg shadow-sm">
-                        <i data-feather="tool" class="h-10 w-10 mx-auto text-black mb-3"></i>
-                        <span class="font-semibold">Gear & Tuning Room</span>
+                        <i data-feather="activity" class="h-10 w-10 mx-auto text-black mb-3"></i>
+                        <span class="font-semibold">Yoga & Fitness Space</span>
                     </div>
                     <div class="text-center p-6 bg-white rounded-lg shadow-sm">
                         <i data-feather="wifi" class="h-10 w-10 mx-auto text-black mb-3"></i>
                         <span class="font-semibold">High-Speed WiFi</span>
                     </div>
                     <div class="text-center p-6 bg-white rounded-lg shadow-sm">
-                        <i data-feather="coffee" class="h-10 w-10 mx-auto text-black mb-3"></i>
-                        <span class="font-semibold">Fully-Stocked Kitchen</span>
+                        <i data-feather="shield" class="h-10 w-10 mx-auto text-black mb-3"></i>
+                        <span class="font-semibold">Free Garage Parking</span>
                     </div>
                 </div>
                 <div class="text-center mt-12 animate-on-scroll">
-                    <a href="#amenities" class="bg-transparent border-2 border-black text-black font-bold py-3 px-8 rounded-lg shadow-md hover:bg-black hover:text-white transition transform hover:scale-105 duration-300 inline-block">
+                    <a href="https://cottonwoodcanyonsbasecamp.guestybookings.com/en/properties/68f28768353659001089f33f?minOccupancy=1" target="_blank" class="bg-transparent border-2 border-black text-black font-bold py-3 px-8 rounded-lg shadow-md hover:bg-black hover:text-white transition transform hover:scale-105 duration-300 inline-block">
                         View All Amenities
                     </a>
                 </div>
@@ -296,85 +333,66 @@
                     <h2 class="text-4xl font-bold text-stone-900">What Our Guests Are Saying</h2>
                     <p class="text-stone-600 mt-4 max-w-2xl mx-auto">We're dedicated to providing a 5-star experience for every guest.</p>
                 </div>
-                <div class="flex overflow-x-auto space-x-8 pb-8 no-scrollbar snap-x snap-mandatory">
-                    <!-- Review Card 1 --><div class="flex-shrink-0 w-full sm:w-1/2 lg:w-1/3 snap-center animate-on-scroll">
-                        <div class="bg-stone-100 p-8 rounded-lg shadow-lg h-full flex flex-col justify-between">
-                            <div>
-                                <div class="flex items-center mb-4">
-                                    <div class="text-amber-500 flex space-x-1">
-                                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                                    </div>
+                <div class="relative max-w-7xl mx-auto">
+                    <div id="reviews-container" class="flex overflow-x-auto snap-x snap-mandatory no-scrollbar space-x-8">
+                        <!-- Review Card 1 --><div class="flex-shrink-0 w-full sm:w-1/2 md:w-1/3 snap-center animate-on-scroll">
+                            <div class="bg-stone-100 p-8 rounded-lg shadow-lg h-full flex flex-col justify-between">
+                                <div>
+                                    <div class="text-amber-500 flex space-x-1 mb-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                                    <p class="text-stone-600 mb-4">"Beautiful and well decorated place, very conveniently located a short drive from little cottonwood canyon. It had everything we needed and lots of bonus amenities - the hot tub, sauna,..."</p>
                                 </div>
-                                <p class="text-stone-600 mb-4">"Beautiful and well decorated place, very conveniently located a short drive from little cottonwood canyon. It had everything we needed and lots of bonus amenities - the hot tub, sauna,..."</p>
+                                <p class="font-bold text-stone-800 mt-4">- Amaya</p>
                             </div>
-                            <p class="font-bold text-stone-800 mt-4">- Amaya</p>
+                        </div>
+                        <!-- Review Card 2 --><div class="flex-shrink-0 w-full sm:w-1/2 md:w-1/3 snap-center animate-on-scroll" style="animation-delay: 150ms;">
+                            <div class="bg-stone-100 p-8 rounded-lg shadow-lg h-full flex flex-col justify-between">
+                                <div>
+                                    <div class="text-amber-500 flex space-x-1 mb-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                                    <p class="text-stone-600 mb-4">"Perfect spot for our ski trip and daily rides up to Big Cottonwood. The hot tub and sauna were great after long days and the house came with everything we needed. Woul..."</p>
+                                </div>
+                                <p class="font-bold text-stone-800 mt-4">- Seth</p>
+                            </div>
+                        </div>
+                        <!-- Review Card 3 --><div class="flex-shrink-0 w-full sm:w-1/2 md:w-1/3 snap-center animate-on-scroll" style="animation-delay: 300ms;">
+                            <div class="bg-stone-100 p-8 rounded-lg shadow-lg h-full flex flex-col justify-between">
+                                <div>
+                                    <div class="text-amber-500 flex space-x-1 mb-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                                    <p class="text-stone-600 mb-4">"Our family of four loved our stay at this house! It has everything you could need, plus a great layout and a sauna and hot tub. The house is well-appointed with upscale..."</p>
+                                </div>
+                                <p class="font-bold text-stone-800 mt-4">- Pam</p>
+                            </div>
+                        </div>
+                        <!-- Review Card 4 --><div class="flex-shrink-0 w-full sm:w-1/2 md:w-1/3 snap-center">
+                            <div class="bg-stone-100 p-8 rounded-lg shadow-lg h-full flex flex-col justify-between">
+                                <div>
+                                    <div class="text-amber-500 flex space-x-1 mb-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                                    <p class="text-stone-600 mb-4">"Great place and communication, check in etc was very smooth. The house is very clean, comfortable, and nicely appointed with a great location near the ski mountains."</p>
+                                </div>
+                                <p class="font-bold text-stone-800 mt-4">- Adam</p>
+                            </div>
+                        </div>
+                        <!-- Review Card 5 --><div class="flex-shrink-0 w-full sm:w-1/2 md:w-1/3 snap-center">
+                            <div class="bg-stone-100 p-8 rounded-lg shadow-lg h-full flex flex-col justify-between">
+                                <div>
+                                    <div class="text-amber-500 flex space-x-1 mb-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                                    <p class="text-stone-600 mb-4">"From start to finish was exactly as advertised will definitely be staying here again"</p>
+                                </div>
+                                <p class="font-bold text-stone-800 mt-4">- Brian</p>
+                            </div>
+                        </div>
+                        <!-- Review Card 6 --><div class="flex-shrink-0 w-full sm:w-1/2 md:w-1/3 snap-center">
+                            <div class="bg-stone-100 p-8 rounded-lg shadow-lg h-full flex flex-col justify-between">
+                                <div>
+                                    <div class="text-amber-500 flex space-x-1 mb-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                                    <p class="text-stone-600 mb-4">"Peter is a great host and we absolutely loved our stay in this wonderful East Shandy spot. The house was beautiful, well-appointed, and the beds were super comfortable! Thanks..."</p>
+                                </div>
+                                <p class="font-bold text-stone-800 mt-4">- Richard</p>
+                            </div>
                         </div>
                     </div>
-                    <!-- Review Card 2 --><div class="flex-shrink-0 w-full sm:w-1/2 lg:w-1/3 snap-center animate-on-scroll" style="animation-delay: 150ms;">
-                        <div class="bg-stone-100 p-8 rounded-lg shadow-lg h-full flex flex-col justify-between">
-                            <div>
-                                <div class="flex items-center mb-4">
-                                    <div class="text-amber-500 flex space-x-1">
-                                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                                    </div>
-                                </div>
-                                <p class="text-stone-600 mb-4">"Perfect spot for our ski trip and daily rides up to Big Cottonwood. The hot tub and sauna were great after long days and the house came with everything we needed. Woul..."</p>
-                            </div>
-                            <p class="font-bold text-stone-800 mt-4">- Seth</p>
-                        </div>
-                    </div>
-                    <!-- Review Card 3 --><div class="flex-shrink-0 w-full sm:w-1/2 lg:w-1/3 snap-center animate-on-scroll" style="animation-delay: 300ms;">
-                        <div class="bg-stone-100 p-8 rounded-lg shadow-lg h-full flex flex-col justify-between">
-                            <div>
-                                <div class="flex items-center mb-4">
-                                    <div class="text-amber-500 flex space-x-1">
-                                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                                    </div>
-                                </div>
-                                <p class="text-stone-600 mb-4">"Our family of four loved our stay at this house! It has everything you could need, plus a great layout and a sauna and hot tub. The house is well-appointed with upscale..."</p>
-                            </div>
-                            <p class="font-bold text-stone-800 mt-4">- Pam</p>
-                        </div>
-                    </div>
-                    <!-- Review Card 4 --><div class="flex-shrink-0 w-full sm:w-1/2 lg:w-1/3 snap-center animate-on-scroll" style="animation-delay: 450ms;">
-                        <div class="bg-stone-100 p-8 rounded-lg shadow-lg h-full flex flex-col justify-between">
-                            <div>
-                                <div class="flex items-center mb-4">
-                                    <div class="text-amber-500 flex space-x-1">
-                                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                                    </div>
-                                </div>
-                                <p class="text-stone-600 mb-4">"Great place and communication, check in etc was very smooth. The house is very clean, comfortable, and nicely appointed with a great location near the ski mountains."</p>
-                            </div>
-                            <p class="font-bold text-stone-800 mt-4">- Adam</p>
-                        </div>
-                    </div>
-                     <!-- Review Card 5 --><div class="flex-shrink-0 w-full sm:w-1/2 lg:w-1/3 snap-center animate-on-scroll" style="animation-delay: 600ms;">
-                        <div class="bg-stone-100 p-8 rounded-lg shadow-lg h-full flex flex-col justify-between">
-                            <div>
-                                <div class="flex items-center mb-4">
-                                    <div class="text-amber-500 flex space-x-1">
-                                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                                    </div>
-                                </div>
-                                <p class="text-stone-600 mb-4">"From start to finish was exactly as advertised will definitely be staying here again"</p>
-                            </div>
-                            <p class="font-bold text-stone-800 mt-4">- Brian</p>
-                        </div>
-                    </div>
-                     <!-- Review Card 6 --><div class="flex-shrink-0 w-full sm:w-1/2 lg:w-1/3 snap-center animate-on-scroll" style="animation-delay: 750ms;">
-                        <div class="bg-stone-100 p-8 rounded-lg shadow-lg h-full flex flex-col justify-between">
-                            <div>
-                                <div class="flex items-center mb-4">
-                                    <div class="text-amber-500 flex space-x-1">
-                                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                                    </div>
-                                </div>
-                                <p class="text-stone-600 mb-4">"Peter is a great host and we absolutely loved our stay in this wonderful East Shandy spot. The house was beautiful, well-appointed, and the beds were super comfortable! Thanks..."</p>
-                            </div>
-                            <p class="font-bold text-stone-800 mt-4">- Richard</p>
-                        </div>
-                    </div>
+                    <!-- Navigation Arrows -->
+                    <button id="prev-review" class="absolute top-1/2 left-0 -translate-y-1/2 -translate-x-12 bg-white rounded-full p-2 shadow-md hover:bg-stone-100 transition"><i data-feather="chevron-left" class="h-6 w-6 text-black"></i></button>
+                    <button id="next-review" class="absolute top-1/2 right-0 -translate-y-1/2 translate-x-12 bg-white rounded-full p-2 shadow-md hover:bg-stone-100 transition"><i data-feather="chevron-right" class="h-6 w-6 text-black"></i></button>
                 </div>
             </div>
         </section>
@@ -430,22 +448,48 @@
             </div>
         </section>
 
-        <!-- Meet The Host --><section id="host" class="py-20 bg-white">
+        <!-- NEW Location Highlights Section --><section id="location" class="py-20 bg-white">
             <div class="container mx-auto px-6">
-                <div class="flex flex-col md:flex-row items-center gap-12">
-                    <div class="md:w-1/3 animate-on-scroll">
-                        <img src="https://placehold.co/400x400/f5f5f4/1c1917?text=Your+Host" alt="Photo of your host" class="rounded-full shadow-xl mx-auto">
+                 <div class="text-center mb-12 animate-on-scroll">
+                    <h2 class="text-4xl font-bold text-stone-900">Unbeatable Location</h2>
+                    <p class="text-stone-600 mt-4 max-w-2xl mx-auto">Nestled in the heart of the Wasatch, you're just minutes away from world-class adventure and easy airport access.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto text-center animate-on-scroll">
+                     <div>
+                        <i data-feather="map-pin" class="h-10 w-10 mx-auto mb-3 text-black"></i>
+                        <h3 class="font-bold text-xl">5 Minutes</h3>
+                        <p class="text-stone-600">to Alta Ski Area</p>
                     </div>
-                    <div class="md:w-2/3 text-center md:text-left animate-on-scroll" style="animation-delay: 150ms;">
-                        <h2 class="text-4xl font-bold text-stone-900">A Warm Welcome from Your Host</h2>
-                        <p class="text-stone-700 mt-4 text-lg">"As lifelong skiers and bikers, we built this basecamp to be the perfect launchpad for mountain adventures. We've poured our love for the Wasatch into every detail. Our goal is to provide a seamless, 5-star experience so you can focus on making memories in these incredible mountains. We can't wait to host you!"</p>
-                        <p class="mt-4 font-bold text-stone-800">- The Owners</p>
+                     <div>
+                        <i data-feather="map-pin" class="h-10 w-10 mx-auto mb-3 text-black"></i>
+                        <h3 class="font-bold text-xl">10 Minutes</h3>
+                        <p class="text-stone-600">to Snowbird</p>
+                    </div>
+                     <div>
+                        <i data-feather="navigation" class="h-10 w-10 mx-auto mb-3 text-black"></i>
+                        <h3 class="font-bold text-xl">30 Minutes</h3>
+                        <p class="text-stone-600">to SLC International Airport</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Final CTA --><section id="book" class="py-20 bg-stone-100">
+        <!-- Meet The Host --><section id="host" class="py-20 bg-stone-100">
+            <div class="container mx-auto px-6">
+                <div class="flex flex-col md:flex-row items-center gap-12">
+                    <div class="md:w-1/3 animate-on-scroll">
+                        <img src="https://placehold.co/400x400/f5f5f4/1c1917?text=Your+Hosts" alt="Photo of your hosts" class="rounded-full shadow-xl mx-auto">
+                    </div>
+                    <div class="md:w-2/3 text-center md:text-left animate-on-scroll" style="animation-delay: 150ms;">
+                        <h2 class="text-4xl font-bold text-stone-900">A Warm Welcome from Your Hosts</h2>
+                        <p class="text-stone-700 mt-4 text-lg">"As lifelong skiers, mountain bikers, and outdoor enthusiasts, we built this basecamp to be the perfect launchpad for exploring the Wasatch. We've poured our love for these mountains into every detail and aim to provide a seamless, 5-star experience so you can focus on making incredible memories. We can't wait to host you!"</p>
+                        <p class="mt-4 font-bold text-stone-800">- Peter, Laura & Paul</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final CTA --><section id="book" class="py-20 bg-white">
             <div class="container mx-auto px-6 text-center text-stone-800">
                 <div class="animate-on-scroll">
                     <h2 class="text-4xl font-bold text-stone-900">Your Utah Escape Awaits</h2>
@@ -471,10 +515,10 @@
                 </div>
 
                 <div class="flex flex-col sm:flex-row items-center justify-center gap-4 animate-on-scroll">
-                    <a href="#" class="bg-black text-white font-bold py-4 px-10 text-lg rounded-lg shadow-xl hover:bg-stone-800 transition transform hover:scale-105 duration-300 inline-block w-full sm:w-auto">
+                    <a href="https://cottonwoodcanyonsbasecamp.guestybookings.com/en/properties/68f28768353659001089f33f?minOccupancy=1" target="_blank" class="bg-black text-white font-bold py-4 px-10 text-lg rounded-lg shadow-xl hover:bg-stone-800 transition transform hover:scale-105 duration-300 inline-block w-full sm:w-auto">
                         Secure Your Dates
                     </a>
-                    <a href="mailto:info@ccbasecamp.com" class="bg-transparent border-2 border-black text-black font-bold py-4 px-10 text-lg rounded-lg shadow-xl hover:bg-black hover:text-white transition transform hover:scale-105 duration-300 inline-block w-full sm:w-auto">
+                    <a href="#" class="open-contact-modal bg-transparent border-2 border-black text-black font-bold py-4 px-10 text-lg rounded-lg shadow-xl hover:bg-black hover:text-white transition transform hover:scale-105 duration-300 inline-block w-full sm:w-auto">
                         Get In Touch
                     </a>
                 </div>
@@ -500,8 +544,9 @@
                         <li><a href="#amenities" class="hover:text-white transition-colors">Amenities</a></li>
                         <li><a href="#reviews" class="hover:text-white transition-colors">Guest Experience</a></li>
                         <li><a href="#explore" class="hover:text-white transition-colors">Explore</a></li>
-                        <li><a href="#host" class="hover:text-white transition-colors">Your Host</a></li>
-                        <li><a href="mailto:info@ccbasecamp.com" class="hover:text-white transition-colors">Contact</a></li>
+                        <li><a href="#location" class="hover:text-white transition-colors">Location</a></li>
+                        <li><a href="#host" class="hover:text-white transition-colors">Your Hosts</a></li>
+                        <li><a href="#" class="open-contact-modal hover:text-white transition-colors">Contact</a></li>
                     </ul>
                 </div>
 
@@ -516,6 +561,44 @@
         </div>
     </footer>
     
+    <!-- Contact Modal -->
+    <div id="contact-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50 p-4">
+        <div class="bg-white rounded-lg shadow-2xl p-8 max-w-lg w-full relative animate-on-scroll" id="modal-content">
+            <button id="close-modal" class="absolute top-4 right-4 text-stone-500 hover:text-black transition-colors">
+                <i data-feather="x" class="h-6 w-6"></i>
+            </button>
+            <div class="text-center mb-6">
+                <h2 class="text-3xl font-bold text-stone-900">Have a Question?</h2>
+                <p class="text-stone-600 mt-2">We'll get back to you as soon as possible.</p>
+            </div>
+            <form action="#" method="POST">
+                <!-- This is a front-end only form. It will not send emails without a backend service. -->
+                <div class="mb-4">
+                    <label for="modal-name" class="block text-stone-700 font-bold mb-2">Name</label>
+                    <input type="text" id="modal-name" name="name" class="w-full px-4 py-2 border border-stone-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black" required>
+                </div>
+                <div class="mb-4">
+                    <label for="modal-email" class="block text-stone-700 font-bold mb-2">Email</label>
+                    <input type="email" id="modal-email" name="email" class="w-full px-4 py-2 border border-stone-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black" required>
+                </div>
+                <div class="mb-6">
+                    <label for="modal-message" class="block text-stone-700 font-bold mb-2">Message</label>
+                    <textarea id="modal-message" name="message" rows="5" class="w-full px-4 py-2 border border-stone-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black" required></textarea>
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="bg-black text-white font-bold py-3 px-10 text-lg rounded-lg shadow-xl hover:bg-stone-800 transition transform hover:scale-105 duration-300 inline-block">
+                        Send Message
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Floating Contact Button -->
+    <button class="open-contact-modal fixed bottom-5 right-5 bg-black text-white rounded-full p-4 shadow-lg hover:bg-stone-800 transition transform hover:scale-110 z-40">
+        <i data-feather="message-square" class="h-6 w-6"></i>
+    </button>
+
     <!-- Fancybox JS for Lightbox --><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
 
     <script>
@@ -531,29 +614,92 @@
         document.addEventListener("DOMContentLoaded", () => {
             const animatedElements = document.querySelectorAll('.animate-on-scroll');
 
-            // Fallback for browsers that don't support IntersectionObserver
-            if (!('IntersectionObserver' in window)) {
-                animatedElements.forEach(el => el.classList.add('is-visible'));
-                return;
-            }
-
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
-                    // When the element is in view, add the 'is-visible' class
                     if (entry.isIntersecting) {
                         entry.target.classList.add('is-visible');
-                        // Stop observing the element once it's visible
                         observer.unobserve(entry.target);
                     }
                 });
-            }, {
-                threshold: 0.1 // Trigger when 10% of the element is visible
-            });
+            }, { threshold: 0.1 });
 
-            animatedElements.forEach(el => {
-                observer.observe(el);
+            animatedElements.forEach(el => observer.observe(el));
+
+            // Hero Slider Logic
+            const slides = document.querySelectorAll('.hero-slide');
+            let currentSlide = 0;
+            const slideInterval = 5000; // Time between slides in milliseconds (5 seconds)
+
+            function nextSlide() {
+                slides[currentSlide].classList.remove('active');
+                currentSlide = (currentSlide + 1) % slides.length;
+                slides[currentSlide].classList.add('active');
+            }
+             // Make sure there are slides before starting the interval
+            if (slides.length > 1) {
+                setInterval(nextSlide, slideInterval);
+            }
+
+            // Activate initial feather icons for navigation arrows if needed immediately
+            feather.replace(); 
+        });
+
+        // Contact Modal Logic
+        const contactModal = document.getElementById('contact-modal');
+        const modalContent = document.getElementById('modal-content');
+        const openModalButtons = document.querySelectorAll('.open-contact-modal');
+        const closeModalButton = document.getElementById('close-modal');
+
+        openModalButtons.forEach(button => {
+            button.addEventListener('click', (e) => {
+                e.preventDefault();
+                contactModal.classList.remove('hidden');
+                contactModal.classList.add('flex');
+                // Ensure Feather icons in modal are replaced
+                feather.replace(); 
             });
         });
+
+        const closeModal = () => {
+            contactModal.classList.add('hidden');
+            contactModal.classList.remove('flex');
+        };
+
+        closeModalButton.addEventListener('click', closeModal);
+
+        contactModal.addEventListener('click', (e) => {
+            // Close modal if clicking on the background overlay, but not on the modal content itself
+            if (e.target === contactModal) { 
+                closeModal();
+            }
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === "Escape" && !contactModal.classList.contains('hidden')) {
+                closeModal();
+            }
+        });
+
+        // Reviews Scroller Logic 
+        const reviewsContainer = document.getElementById('reviews-container');
+        const prevButton = document.getElementById('prev-review');
+        const nextButton = document.getElementById('next-review');
+
+        if (reviewsContainer && prevButton && nextButton) { // Check if elements exist
+            nextButton.addEventListener('click', () => {
+                const reviewWidth = reviewsContainer.querySelector('div[class*="flex-shrink-0"]').offsetWidth; // Target the review card
+                reviewsContainer.scrollBy({ left: reviewWidth + 32, behavior: 'smooth' }); // 32 is for space-x-8 (gap-8 => 2rem => 32px)
+                 // Re-run Feather Icons replacement after scroll might reveal new icons
+                setTimeout(() => feather.replace(), 300); // Delay to allow scroll to settle
+            });
+    
+            prevButton.addEventListener('click', () => {
+                 const reviewWidth = reviewsContainer.querySelector('div[class*="flex-shrink-0"]').offsetWidth; // Target the review card
+                reviewsContainer.scrollBy({ left: -(reviewWidth + 32), behavior: 'smooth' });
+                 // Re-run Feather Icons replacement after scroll might reveal new icons
+                 setTimeout(() => feather.replace(), 300); // Delay to allow scroll to settle
+            });
+        }
     </script>
 </body>
 </html>
